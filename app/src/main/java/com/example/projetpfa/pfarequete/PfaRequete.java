@@ -26,7 +26,7 @@ public class PfaRequete {
         this.queue = queue;
     }
 
-    public void register(final String pseudo,final String email,final  String password,final  String password2,final InscriptionCallback callback){
+    public void register(final String username,final String email,final  String password,final  String password2,final InscriptionCallback callback){
 
         String url = "http://192.168.211.1/pfa/inscrire.php";
 
@@ -47,8 +47,8 @@ public class PfaRequete {
                         callback.onSucces("L inscription s est bien deroulé");
                     }else {
                         JSONObject messages = json.getJSONObject("message");
-                        if(messages.has("pseudo")){
-                            errors.put("pseudo",messages.getString("pseudo"));
+                        if(messages.has("username")){
+                            errors.put("username",messages.getString("username"));
                         }
                         if(messages.has("email")){
                             errors.put("email",messages.getString("email"));
@@ -77,7 +77,7 @@ public class PfaRequete {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String, String> map = new HashMap<>();
-                map.put("pseudo", pseudo);
+                map.put("username", username);
                 map.put("email", email);
                 map.put("password", password);
                 map.put("password2", password2);
@@ -96,16 +96,14 @@ public class PfaRequete {
     }
 
 
-    public void connexion(final String pseudo, final String password, final ConnexionCallback callback){
+    public void connexion(final String username, final String password, final ConnexionCallback callback){
         String url = "http://192.168.211.1/pfa/connexion.php";
 
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-
                 JSONObject json  = null;
-
 
                 try {
                     json = new JSONObject(response);
@@ -113,8 +111,8 @@ public class PfaRequete {
 
                     if(!error){
                         String id = json.getString("id");
-                        String pseudo = json.getString("pseudo");
-                        callback.onSucces(id,pseudo);
+                        String username = json.getString("username");
+                        callback.onSucces(id,username);
                     }else {
                        callback.onError(json.getString("message"));
                     }
@@ -122,8 +120,6 @@ public class PfaRequete {
                     callback.onError("Une erreur s est produite");
                     e.printStackTrace();
                 }
-
-
 
             }
         }, new Response.ErrorListener() {
@@ -140,7 +136,7 @@ public class PfaRequete {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String, String> map = new HashMap<>();
-                map.put("pseudo", pseudo);
+                map.put("username", username);
                 map.put("password", password);
                 return map;
             }
@@ -152,7 +148,7 @@ public class PfaRequete {
 
 
     public interface ConnexionCallback{
-        void onSucces(String id,String pseudo);
+        void onSucces(String id,String username);
         void onError(String message);
     }
 }

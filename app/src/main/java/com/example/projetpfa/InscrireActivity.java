@@ -43,18 +43,18 @@ public class InscrireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                loader.setVisibility(View.VISIBLE);
-                String pseudo = til_pseudo.getEditText().getText().toString().trim();
+                String username = til_pseudo.getEditText().getText().toString().trim();
                 String email = til_email.getEditText().getText().toString().trim();
                 String password = til_password.getEditText().getText().toString().trim();
                 String password2 = til_password2.getEditText().getText().toString().trim();
 
-                if(pseudo.length() > 0 && email.length() > 0 && password.length() > 0 && password2.length() > 0){
+                if(username.length() > 0 && email.length() > 0 && password.length() > 0 && password2.length() > 0){
 
-                requete.register(pseudo, email, password, password2, new PfaRequete.InscriptionCallback() {
+                requete.register(username, email, password, password2, new PfaRequete.InscriptionCallback() {
                     @Override
                     public void onSucces(String message) {
                         loader.setVisibility(View.GONE);
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(),ConnexionActivity.class);
                         intent.putExtra("INSCRIRE",message);
                         startActivity(intent);
                         finish();
@@ -63,8 +63,8 @@ public class InscrireActivity extends AppCompatActivity {
                     @Override
                     public void inputErrors(Map<String, String> errors) {
                         loader.setVisibility(View.GONE);
-                        if(errors.get("pseudo") != null){
-                            til_pseudo.setError(errors.get("pseudo"));
+                        if(errors.get("username") != null){
+                            til_pseudo.setError(errors.get("username"));
                         }else{
                             til_pseudo.setErrorEnabled(false);
                         }

@@ -11,16 +11,22 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_login,btn_inscrire;
+    private GestionSession gestionSession;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
-        if(intent.hasExtra("INSCRIRE")){
-            Toast.makeText(this,intent.getStringExtra("INSCRIRE"),Toast.LENGTH_LONG).show();
+        gestionSession = new GestionSession(this);
+
+        if(gestionSession.isLogged()){
+            Intent intent=new Intent(this,PageAccueil.class);
+            startActivity(intent);
+            finish();
         }
+
+
 
         btn_login = findViewById(R.id.btn_login);
         btn_inscrire =  findViewById(R.id.btn_inscrire);
