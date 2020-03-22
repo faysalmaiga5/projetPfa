@@ -1,4 +1,4 @@
-package com.example.projetpfa;
+package edu.ensit.pfa.gestionLivraison.projetpfa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
-import com.example.projetpfa.pfarequete.PfaRequete;
+import edu.ensit.pfa.gestionLivraison.projetpfa.pfarequete.PfaRequete;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Map;

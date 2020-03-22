@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:text="@string/titre_inscription_livreur"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_nom"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:hint="@string/nom"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            tools:ignore="Autofill" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_prenom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_prenom"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:hint="@string/prenom"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            tools:ignore="Autofill" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_adresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_adresse"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:hint="@string/adresse"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            tools:ignore="Autofill" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_nomUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_nomUser"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:hint="@string/nomUser"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            tools:ignore="Autofill" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_motDePasse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            tools:ignore="Autofill"
+            android:id="@+id/et_motDePasse"
+            android:inputType="textPassword"
+            android:layout_width="fill_parent"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:layout_height="wrap_content"
+            android:hint="@string/motDePasse" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_motDePasse2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_motDePasse2"
+            android:inputType="textPassword"
+            android:layout_width="fill_parent"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:layout_height="wrap_content"
+            android:hint="@string/motDePasse2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_ajout_livreur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/ajout_livreur" />
+
+    <ProgressBar
+        android:id="@+id/pb_loader"
+        android:layout_width="84dp"
+        android:layout_height="67dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+
+</LinearLayout>

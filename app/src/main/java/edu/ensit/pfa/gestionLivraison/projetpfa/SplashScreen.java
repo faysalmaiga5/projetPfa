@@ -1,4 +1,4 @@
-package com.example.projetpfa;
+package edu.ensit.pfa.gestionLivraison.projetpfa;
 
 import android.content.Intent;
 import android.os.Bundle;

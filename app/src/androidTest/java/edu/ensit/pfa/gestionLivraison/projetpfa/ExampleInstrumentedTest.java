@@ -1,4 +1,4 @@
-package com.example.projetpfa;
+package edu.ensit.pfa.gestionLivraison.projetpfa;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.projetpfa", appContext.getPackageName());
+        assertEquals("edu.ensit.pfa.gestionLivraison.projetpfa", appContext.getPackageName());
     }
 }

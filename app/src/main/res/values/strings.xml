@@ -9,4 +9,14 @@
     <string name="password2">Repeter mot de passe</string>
     <string name="titre_connexion">Connexion</string>
     <string name="logout">Deconnexion</string>
+    <string name="activity_page_accueil_title">Page Administration</string>
+    <string name="titre_inscription_livreur">Ajout d\'un Livreur</string>
+    <string name="nom">nom</string>
+    <string name="prenom">prenom</string>
+    <string name="adresse">adresse</string>
+    <string name="nomUser">Nom d\'utilisateur</string>
+    <string name="motDePasse">mot de passe</string>
+    <string name="motDePasse2">repeter mot de passe</string>
+    <string name="ajout_livreur">"Ajouter "</string>
+    <string name="titre_connexion_livreur">Connexion Livreur</string>
 </resources>
