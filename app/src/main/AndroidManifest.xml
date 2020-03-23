@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AjoutLivreurActivity"></activity>
+        <activity android:name=".PageAccueilLivreur"></activity>
+        <activity android:name=".AjoutLivreurActivity" />
         <activity android:name=".ConnexionLivreurActivity" />
         <activity
             android:name=".PageAccueil"

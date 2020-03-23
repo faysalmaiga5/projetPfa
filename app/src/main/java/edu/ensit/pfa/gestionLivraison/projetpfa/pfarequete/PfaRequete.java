@@ -2,6 +2,7 @@ package edu.ensit.pfa.gestionLivraison.projetpfa.pfarequete;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkError;
@@ -11,11 +12,17 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import edu.ensit.pfa.gestionLivraison.projetpfa.PageAccueilLivreur;
+import edu.ensit.pfa.gestionLivraison.projetpfa.models.Livraison;
 
 public class PfaRequete {
     private Context context;
@@ -89,11 +96,14 @@ public class PfaRequete {
 
     }
 
+
+
     public interface InscriptionCallback{
         void onSucces(String message);
         void inputErrors(Map<String,String> errors);
         void onError(String message);
     }
+
 
 
 
@@ -247,6 +257,7 @@ public class PfaRequete {
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.d("APP",response);
 
                 JSONObject json  = null;
 
@@ -295,8 +306,5 @@ public class PfaRequete {
         void onSucces(String codeLivreur,String nomUser);
         void onError(String message);
     }
-
-
-
 
 }

@@ -55,8 +55,8 @@ public class ConnexionLivreurActivity extends AppCompatActivity {
                                 @Override
                                 public void onSucces(String codeLivreur, String nomUser) {
                                     pb_loader.setVisibility(View.VISIBLE);
-                                    //gestionSession.insertUser(codeLivreur,nomUser);
-                                    Intent intent = new Intent(getApplicationContext(),PageAccueil.class);
+                                    gestionSession.insertUser(codeLivreur,nomUser);
+                                    Intent intent = new Intent(getApplicationContext(),PageAccueilLivreur.class);
                                     startActivity(intent);
                                     finish();
                                 }
